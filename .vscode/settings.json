@@ -1,0 +1,30 @@
+{
+  "editor.formatOnSave": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "dart.lineLength": 100,
+  "dart.enableSdkFormatter": true,
+  "dart.buildRunnerAdditionalArgs": ["--delete-conflicting-outputs"],
+  "dart.warnWhenEditingFilesOutsideWorkspace": true,
+  "dart.debugSdkLibraries": false,
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [100],
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    "files.insertFinalNewline": true
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}
