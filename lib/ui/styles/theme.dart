@@ -7,8 +7,10 @@ ThemeData get lightTheme => ThemeData(
       appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarBrightness: Brightness.light,
+          statusBarIconBrightness: Brightness.light,
+          statusBarColor: Colors.transparent,
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.darkGunmetal,
         foregroundColor: AppColors.dodgerBlue,
         elevation: 0,
       ),

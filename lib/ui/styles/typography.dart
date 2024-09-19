@@ -14,4 +14,9 @@ class AppTextStyle {
   static const TextStyle bodyRegular = TextStyle(
     fontSize: 14,
   );
+
+  /// Body Regular - 14 - Regular
+  static const TextStyle bodyMedium = TextStyle(
+    fontSize: 18,
+  );
 }

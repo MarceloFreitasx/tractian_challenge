@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'env/env.dart';
 import 'presentation/navigator/navigator.dart';
+import 'ui/styles/styles.dart';
 
 void main() => Env();
 
@@ -13,6 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Tractian Challenge',
+      theme: lightTheme,
+      debugShowCheckedModeBanner: false,
       getPages: PagesRoutes.routes,
       initialRoute: PagesRoutes.initial,
     );
