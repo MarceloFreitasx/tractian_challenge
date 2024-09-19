@@ -13,7 +13,7 @@
             "type": "dart",
             "toolArgs": [
                 "--dart-define-from-file",
-                "lib/env/.develop.env"
+                "lib/env/.env"
             ],
         }
     ]
