@@ -6,10 +6,12 @@ class CompanyButton extends StatelessWidget {
   const CompanyButton({
     super.key,
     required this.title,
+    this.icon = Icons.abc,
     this.onPressed,
   });
 
   final String title;
+  final IconData icon;
   final VoidCallback? onPressed;
 
   @override
@@ -19,7 +21,7 @@ class CompanyButton extends StatelessWidget {
         title,
         style: AppTextStyle.bodyMedium,
       ),
-      icon: const Icon(Icons.abc),
+      icon: Icon(icon),
       style: TextButton.styleFrom(
         backgroundColor: AppColors.dodgerBlue,
         foregroundColor: Colors.white,
