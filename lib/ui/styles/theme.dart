@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'colors.dart';
+import 'styles.dart';
 
 ThemeData get lightTheme => ThemeData(
       appBarTheme: const AppBarTheme(
@@ -11,8 +11,10 @@ ThemeData get lightTheme => ThemeData(
           statusBarColor: Colors.transparent,
         ),
         backgroundColor: AppColors.darkGunmetal,
-        foregroundColor: AppColors.dodgerBlue,
+        foregroundColor: Colors.white,
         elevation: 0,
+        titleTextStyle: AppTextStyle.bodyMedium,
+        centerTitle: true,
       ),
       canvasColor: Colors.white,
       scaffoldBackgroundColor: Colors.white,
