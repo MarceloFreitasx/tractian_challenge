@@ -17,27 +17,21 @@ class HomePage extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            CompanyButton(
-              title: "Jaguar Unit",
-              onPressed: () => controller.goToCompanyAssets("jaguar"),
+          padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 30),
+          child: Obx(
+            () => ListView.separated(
+              itemBuilder: (_, index) {
+                final company = controller.companies[index];
+
+                return CompanyButton(
+                  title: company.name!,
+                  onPressed: () => controller.goToCompanyAssets(company.id!),
+                );
+              },
+              separatorBuilder: (_, __) => const SizedBox(height: 40),
+              itemCount: controller.companies.length,
             ),
-            const SizedBox(height: 40),
-            CompanyButton(
-              title: "Tobias Unit",
-              onPressed: () => controller.goToCompanyAssets("tobias"),
-            ),
-            const SizedBox(height: 40),
-            CompanyButton(
-              title: "Apex Unit",
-              onPressed: () => controller.goToCompanyAssets("apex"),
-            ),
-          ],
-        ),
-      ),
+          )),
     );
   }
 }

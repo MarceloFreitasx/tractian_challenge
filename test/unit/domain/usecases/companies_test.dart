@@ -15,20 +15,20 @@ void main() {
     });
 
     test('should return a list of companies', () async {
-      when(() => sut.getAll()).thenAnswer((_) async => [
+      when(() => sut.call()).thenAnswer((_) async => [
             CompanyEntity(id: faker.guid.guid(), name: faker.company.name()),
             CompanyEntity(id: faker.guid.guid(), name: faker.company.name()),
           ]);
 
-      final companies = await sut.getAll();
+      final companies = await sut.call();
       expect(companies, isA<List<CompanyEntity>>());
       expect(companies.length, 2);
     });
 
     test('should throw an exception when usecase throws an exception', () async {
-      when(() => sut.getAll()).thenThrow(Exception('Error fetching companies'));
+      when(() => sut.call()).thenThrow(Exception('Error fetching companies'));
 
-      expect(() => sut.getAll(), throwsException);
+      expect(() => sut.call(), throwsException);
     });
   });
 }
