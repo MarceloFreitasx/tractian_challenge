@@ -1,6 +1,7 @@
 import 'package:faker/faker.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tractian_challenge/data/models/models.dart';
+import 'package:tractian_challenge/domain/helpers/helpers.dart';
 
 void main() {
   late Map<String, dynamic> json;
@@ -12,8 +13,8 @@ void main() {
       "name": faker.lorem.sentence(),
       "parentId": faker.guid.guid(),
       "sensorId": faker.guid.guid(),
-      "sensorType": faker.lorem.word(),
-      "status": faker.lorem.word(),
+      "sensorType": "energy",
+      "status": "alert",
       "gatewayId": faker.guid.guid(),
       "locationId": faker.guid.guid(),
     };
@@ -40,8 +41,8 @@ void main() {
       expect(assetEntity.name, assetModel.name);
       expect(assetEntity.parentId, assetModel.parentId);
       expect(assetEntity.sensorId, assetModel.sensorId);
-      expect(assetEntity.sensorType, assetModel.sensorType);
-      expect(assetEntity.status, assetModel.status);
+      expect(assetEntity.sensorType, SensorType.energy);
+      expect(assetEntity.status, AssetStatus.alert);
       expect(assetEntity.gatewayId, assetModel.gatewayId);
       expect(assetEntity.locationId, assetModel.locationId);
     });

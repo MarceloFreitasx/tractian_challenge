@@ -1,10 +1,12 @@
+import '../helpers/helpers.dart';
+
 class AssetEntity {
   String? id;
   String? name;
   String? parentId;
   String? sensorId;
-  String? sensorType;
-  String? status;
+  SensorType? sensorType;
+  AssetStatus? status;
   String? gatewayId;
   String? locationId;
 

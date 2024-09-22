@@ -1,4 +1,5 @@
 import '../../domain/entities/entities.dart';
+import '../../domain/helpers/helpers.dart';
 
 class AssetModel {
   String? id;
@@ -37,8 +38,8 @@ class AssetModel {
         name: name,
         parentId: parentId,
         sensorId: sensorId,
-        sensorType: sensorType,
-        status: status,
+        sensorType: SensorType.fromString(sensorType),
+        status: AssetStatus.fromString(status),
         gatewayId: gatewayId,
         locationId: locationId,
       );
