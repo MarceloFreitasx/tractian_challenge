@@ -29,7 +29,7 @@ class RemoteCompanyDataSource implements CompaniesRepository {
     try {
       final result = await httpClient.request(
         method: HttpMethod.get,
-        url: "/$companyId/assets",
+        url: "/companies/$companyId/assets",
       );
 
       final data = result.data as List<dynamic>;
@@ -44,7 +44,7 @@ class RemoteCompanyDataSource implements CompaniesRepository {
     try {
       final result = await httpClient.request(
         method: HttpMethod.get,
-        url: "/$companyId/locations",
+        url: "/companies/$companyId/locations",
       );
 
       final data = result.data as List<dynamic>;
