@@ -8,6 +8,8 @@ class AppColors {
   static const slateGray = Color(0xFF77818C);
   static const caminePink = Color(0xFFED3833);
   static const kellyGreen = Color(0xFF52C41A);
+  static const gray100 = Color(0xFFEAEFF3);
+  static const gray500 = Color(0xFF8E98A3);
 
   static const primary = dodgerBlue;
   static const secondary = slateGray;
