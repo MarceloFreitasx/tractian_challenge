@@ -6,23 +6,9 @@ enum AssetStatus {
   operating,
   alert;
 
-  IconData? get icon {
-    switch (this) {
-      case AssetStatus.alert:
-        return Icons.circle;
-      default:
-        return null;
-    }
-  }
+  IconData? get icon => Icons.circle;
 
-  Color? get iconColor {
-    switch (this) {
-      case AssetStatus.alert:
-        return AppColors.caminePink;
-      default:
-        return null;
-    }
-  }
+  Color? get iconColor => AppColors.caminePink;
 
   static AssetStatus? fromString(String? status) {
     switch (status) {

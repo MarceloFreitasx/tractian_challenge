@@ -6,23 +6,9 @@ enum SensorType {
   vibration,
   energy;
 
-  IconData? get icon {
-    switch (this) {
-      case SensorType.energy:
-        return Icons.bolt_rounded;
-      default:
-        return null;
-    }
-  }
+  IconData? get icon => Icons.bolt_rounded;
 
-  Color? get iconColor {
-    switch (this) {
-      case SensorType.energy:
-        return AppColors.kellyGreen;
-      default:
-        return null;
-    }
-  }
+  Color? get iconColor => AppColors.kellyGreen;
 
   static SensorType? fromString(String? status) {
     switch (status) {
