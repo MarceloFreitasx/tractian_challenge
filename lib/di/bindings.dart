@@ -1,11 +1,12 @@
 import 'package:get/get.dart';
 
-import '../data/datasources/remote/company.dart';
+import '../data/datasources/datasources.dart';
 import '../data/services/services.dart';
 import '../data/usecases/usecases.dart';
 import '../domain/repositories/repositories.dart';
+import '../domain/services/services.dart';
 import '../domain/usecases/usecases.dart';
-import '../infra/http.dart';
+import '../infra/infra.dart';
 import '../presentation/controllers/controllers.dart';
 import '../ui/pages/pages.dart';
 
@@ -26,10 +27,29 @@ class AppBindings extends Bindings {
       () => GetCompaniesUseCaseImpl(Get.find<CompaniesRepository>()),
       fenix: true,
     );
+    Get.lazyPut<GetAssetsUseCase>(
+      () => GetAssetsUseCaseImpl(Get.find<CompaniesRepository>()),
+      fenix: true,
+    );
+    Get.lazyPut<GetLocationsUseCase>(
+      () => GetLocationsUseCaseImpl(Get.find<CompaniesRepository>()),
+      fenix: true,
+    );
 
     //? Controllers
     Get.lazyPut<HomeController>(
       () => HomeControllerImpl(Get.find<GetCompaniesUseCase>()),
+      fenix: true,
+    );
+    Get.lazyPut<AssetsController>(
+      () => AssetsControllerImpl(
+        Get.find<GetLocationsUseCase>(),
+        Get.find<GetAssetsUseCase>(),
+        AssetTreeServiceImpl(
+          AssetTreeBuilderImpl(),
+          AssetTreeFilterImpl(),
+        ),
+      ),
       fenix: true,
     );
   }
