@@ -8,6 +8,16 @@
             "program": "./test/"
         },
         {
+            "name": "Run all Integration Tests",
+            "type": "dart",
+            "request": "launch",
+            "program": "./integration_test/",
+            "toolArgs": [
+                "--dart-define-from-file",
+                "lib/env/.env"
+            ],
+        },
+        {
             "name": "Development",
             "request": "launch",
             "type": "dart",

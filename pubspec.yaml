@@ -29,6 +29,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  #I
+  integration_test:
+    sdk: flutter
   #M
   mocktail: ^1.0.4
   #T

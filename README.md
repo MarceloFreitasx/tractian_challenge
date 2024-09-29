@@ -39,5 +39,7 @@ This mobile application has the following technologies:
 
 ### Tests
 
-- To run the tests, run the following command
+- To run the unit tests, run the following command
   `flutter test test/`
+- To run the integration tests, run the following command
+  `flutter test --dart-define-from-file=lib/env/.env integration_test/`
