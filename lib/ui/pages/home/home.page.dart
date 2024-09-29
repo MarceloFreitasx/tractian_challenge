@@ -19,18 +19,19 @@ class HomePage extends GetView<HomeController> {
       body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 30),
           child: Obx(
-            () => ListView.separated(
-              itemBuilder: (_, index) {
-                final company = controller.companies[index];
-
-                return CompanyButton(
-                  title: company.name!,
-                  onPressed: () => controller.goToCompanyAssets(company.id!),
-                );
-              },
-              separatorBuilder: (_, __) => const SizedBox(height: 40),
-              itemCount: controller.companies.length,
-            ),
+            () => controller.isLoading
+                ? const Center(child: CircularProgressIndicator())
+                : ListView.separated(
+                    itemBuilder: (_, index) {
+                      final company = controller.companies[index];
+                      return CompanyButton(
+                        title: company.name!,
+                        onPressed: () => controller.goToCompanyAssets(company.id!),
+                      );
+                    },
+                    separatorBuilder: (_, __) => const SizedBox(height: 40),
+                    itemCount: controller.companies.length,
+                  ),
           )),
     );
   }

@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 import '../../domain/entities/entities.dart';
 import '../../domain/usecases/usecases.dart';
 import '../../ui/pages/pages.dart';
+import '../mixins/mixins.dart';
 import '../navigator/navigator.dart';
 
-class HomeControllerImpl extends GetxController implements HomeController {
+class HomeControllerImpl extends GetxController with LoadingManager implements HomeController {
   HomeControllerImpl(this.getCompaniesUC);
 
   final GetCompaniesUseCase getCompaniesUC;
@@ -16,10 +17,8 @@ class HomeControllerImpl extends GetxController implements HomeController {
   List<CompanyEntity> get companies => _companies;
 
   @override
-  void onInit() {
-    try {
-      getCompaniesUC.call().then((value) => _companies.value = value);
-    } catch (_) {}
+  void onInit() async {
+    loadCompanies();
     super.onInit();
   }
 
@@ -29,5 +28,13 @@ class HomeControllerImpl extends GetxController implements HomeController {
       AppRoutes.assets,
       arguments: companyID,
     );
+  }
+
+  void loadCompanies() async {
+    try {
+      setLoadingStarted();
+      await getCompaniesUC.call().then((value) => _companies.value = value);
+      setLoadingCompleted();
+    } catch (_) {}
   }
 }
