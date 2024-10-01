@@ -2,7 +2,7 @@
 
 ![Flutter Version](https://badgen.net/badge/Flutter/3.24.3)
 
-<video src="assets/test_video.mp4" width="240" height="480" controls></video>
+<video src="./assets/test_video.mp4" width="240" height="480" controls></video>
 
 ## Technologies Used
 
